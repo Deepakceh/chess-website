@@ -1,6 +1,7 @@
 import "./globals.css";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
+import Head from 'next/head';
 
 export const metadata = {
   title: "The Chess Classes",
@@ -37,6 +38,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <Head>
+      <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet"/>
+      </Head>
       <body className="font-sans bg-white text-black antialiased">
         <Navbar />
         <main>{children}</main>
