@@ -6,7 +6,11 @@ module.exports = {
     "./app/**/*.{js,jsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        signature: ['"Great Vibes"', 'cursive'], //  this is the class name: font-signature
+      },
+    },
   },
   plugins: [],
 }
