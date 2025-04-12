@@ -1,7 +1,14 @@
 import React from 'react'
-
+import AboutSection from '../../components/AboutSection'
+import HeroSection from '../../components/HeroSection'
 export default function page() {
   return (
-    <div>about page</div>
+    <>
+      <HeroSection
+        title="About Us"
+        currentPage="about"
+      />
+      <AboutSection />
+    </>
   )
 }

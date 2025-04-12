@@ -34,9 +34,9 @@ export default function Navbar() {
           {/* Desktop Menu */}
           <div className="hidden md:flex gap-8 font-medium">
             <Link href="/" className='hover:text-yellow-600'>Home</Link>
-            <Link href="#about" className='hover:text-yellow-600'>About</Link>
-            <Link href="#services" className='hover:text-yellow-600'>Services</Link>
-            <Link href="#contact" className='hover:text-yellow-600'>Contact</Link>
+            <Link href="/about" className='hover:text-yellow-600'>About</Link>
+            <Link href="/services" className='hover:text-yellow-600'>Services</Link>
+            <Link href="/contact" className='hover:text-yellow-600'>Contact</Link>
           </div>
           {/* Join Button */}
           <Link
