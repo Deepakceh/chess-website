@@ -33,7 +33,7 @@ export default function BannerSection() {
       autoplay={{
         delay: 3000,
         disableOnInteraction: false,
-        pauseOnMouseEnter: true, // 👈 This pauses autoplay on hover
+        // pauseOnMouseEnter: true,
       }} loop={true}
       className="w-full"
     >
