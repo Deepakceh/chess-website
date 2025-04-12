@@ -6,48 +6,107 @@ export default function Footer() {
 
         {/* Logo & About */}
         <div>
-          <div className="flex items-center gap-2 mb-4">
-            <img src="/logo.png" alt="The Chess Classes" className="h-10" />
-            <span className="text-xl font-bold text-white">The Chess Classes</span>
+          <div className="flex items-center gap-2 mb-3">
+            <img src="/assets/images/logo-white.png" alt="logo" className='w-40' />
           </div>
           <p className="text-sm">
             Unlock your true potential in chess with expert guidance and live training sessions.
           </p>
-          <div className="flex gap-3 mt-4">
-            <a href="#"><img src="/icons/facebook.svg" alt="Facebook" className="h-5" /></a>
-            <a href="#"><img src="/icons/instagram.svg" alt="Instagram" className="h-5" /></a>
-            <a href="#"><img src="/icons/youtube.svg" alt="YouTube" className="h-5" /></a>
+          <div className="mt-3 space-y-2">
+            {/* Phone */}
+            <a
+              href="tel:+628123451234"
+              className="flex items-center gap-2 text-white hover:text-yellow-500 transition-colors duration-200"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-5 h-5 text-yellow-500"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                />
+              </svg>
+              <span className="text-sm">(+62) 81 2345 1234</span>
+            </a>
+
+            {/* Email */}
+            <a
+              href="mailto:thechessclasses@gmail.com"
+              className="flex items-center gap-2 hover:text-yellow-500 transition-colors duration-200"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-5 h-5 text-yellow-500"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <rect width="20" height="16" x="2" y="4" rx="2" />
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+              </svg>
+              <span className="text-sm">thechessclasses@gmail.com</span>
+            </a>
           </div>
+
         </div>
 
         {/* Quick Links */}
         <div>
           <h3 className="text-white font-semibold mb-3">Quick Links</h3>
           <ul className="space-y-2 text-sm">
-            <li><a href="/about" className="hover:text-white">About Us</a></li>
-            <li><a href="/contact" className="hover:text-white">Contact</a></li>
-            <li><a href="/services" className="hover:text-white">Services</a></li>
-            <li><a href="/gallery" className="hover:text-white">Gallery</a></li>
-            <li><a href="/faq" className="hover:text-white">FAQ</a></li>
+            <li><a href="/" className="hover:text-yellow-500">Home</a></li>
+            <li><a href="/about" className="hover:text-yellow-500">About Us</a></li>
+            <li><a href="/services" className="hover:text-yellow-500">Services</a></li>
+            <li><a href="/contact" className="hover:text-yellow-500">Contact</a></li>
+            <li><a href="/gallery" className="hover:text-yellow-500">Gallery</a></li>
           </ul>
         </div>
 
         {/* Resources */}
         <div>
-          <h3 className="text-white font-semibold mb-3">Resources</h3>
+          <h3 className="text-white font-semibold mb-3">Useful Links</h3>
           <ul className="space-y-2 text-sm">
-            <li><a href="/blog" className="hover:text-white">Blog</a></li>
-            <li><a href="/terms" className="hover:text-white">Terms & Conditions</a></li>
-            <li><a href="/privacy" className="hover:text-white">Privacy Policy</a></li>
-            <li><a href="/refund" className="hover:text-white">Refund Policy</a></li>
+            <li><a href="/privacy" className="hover:text-yellow-500">Privacy Policy</a></li>
+            <li><a href="/terms" className="hover:text-yellow-500">Terms & Conditions</a></li>
+            <li><a href="/support" className="hover:text-yellow-500">Support</a></li>
+            <li><a href="/faq" className="hover:text-yellow-500">FAQ</a></li>
           </ul>
         </div>
 
         {/* Newsletter */}
         <div>
-          <h3 className="text-white font-semibold mb-3">Join Our Newsletter</h3>
-          <p className="text-sm mb-3">Stay updated with training tips and new batches.</p>
-          <form className="flex flex-col gap-2">
+          <h3 className="text-white font-semibold mb-3">Our Social Media</h3>
+          <div className="flex gap-16 mt-4">
+            <a href="www.facebook.com" className="transition-transform duration-200 hover:scale-110 group">
+              <img
+                src="assets/icons/facebook.svg"
+                alt="Facebook"
+                className="h-5 transition-colors duration-200 group-hover:brightness-0 group-hover:invert group-hover:sepia group-hover:hue-rotate-[40deg] group-hover:saturate-[10] group-hover:text-yellow-500"
+              />
+            </a>
+            <a href="www.instagram.com" className="transition-transform duration-200 hover:scale-110 group">
+              <img
+                src="assets/icons/instagram.svg"
+                alt="Instagram"
+                className="h-5 transition-colors duration-200 group-hover:brightness-0 group-hover:invert group-hover:sepia group-hover:hue-rotate-[40deg] group-hover:saturate-[10] group-hover:text-yellow-500"
+              />
+            </a>
+            <a href="www.youtube.com" className="transition-transform duration-200 hover:scale-110 group">
+              <img
+                src="assets/icons/youtube.svg"
+                alt="YouTube"
+                className="h-5 transition-colors duration-200 group-hover:brightness-0 group-hover:invert group-hover:sepia group-hover:hue-rotate-[40deg] group-hover:saturate-[10]"
+              />
+            </a>
+          </div>
+
+          <form className="flex flex-col gap-2 mt-7">
             <input
               type="email"
               placeholder="Enter your email"

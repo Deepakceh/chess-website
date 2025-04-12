@@ -2,6 +2,14 @@ import "./globals.css";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import Head from 'next/head';
+import { Poppins } from 'next/font/google';
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  display: 'swap',
+  variable: '--font-poppins',
+});
 
 export const metadata = {
   title: "The Chess Classes",
@@ -37,11 +45,9 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <Head>
-      <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet"/>
-      </Head>
-      <body className="font-sans bg-white text-black antialiased">
+    <html lang="en" className={poppins.className}>
+      <Head />
+      <body className="bg-white text-black antialiased">
         <Navbar />
         <main>{children}</main>
         <Footer />
