@@ -33,17 +33,17 @@ export default function Navbar() {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex gap-8 font-medium">
-            <Link href="/">Home</Link>
-            <Link href="#about">About</Link>
-            <Link href="#services">Services</Link>
-            <Link href="#contact">Contact</Link>
+            <Link href="/" className='hover:text-yellow-600'>Home</Link>
+            <Link href="#about" className='hover:text-yellow-600'>About</Link>
+            <Link href="#services" className='hover:text-yellow-600'>Services</Link>
+            <Link href="#contact" className='hover:text-yellow-600'>Contact</Link>
           </div>
           {/* Join Button */}
           <Link
             href="/book-demo"
             className={`px-4 py-2 rounded-full text-sm font-semibold transition-colors duration-300 ${scrolled
-              ? 'bg-black text-white hover:bg-gray-800'
-              : 'bg-white text-black hover:bg-gray-200'
+              ? 'bg-black text-white hover:bg-yellow-600 hover:text-black'
+              : 'bg-white text-black hover:bg-yellow-600 hover:text-black'
               }`}
           >
             Book Demo
