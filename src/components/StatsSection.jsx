@@ -23,7 +23,7 @@ export default function StatsSection() {
       initial={{ opacity: 0, y: 60 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      className="relative z-10 -mt-24 bg-white shadow-xl py-8 px-2 sm:px-4 lg:px-8 border-t-4 border-yellow-500 max-w-7xl mx-8"
+      className="relative z-10 -mt-24 bg-white shadow-xl py-8 px-2 sm:px-4 lg:px-8 border-t-4 border-yellow-500 max-w-7xl mx-14"
     >
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
         {stats.map((stat, idx) => (
