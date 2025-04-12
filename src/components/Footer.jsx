@@ -7,16 +7,16 @@ export default function Footer() {
         {/* Logo & About */}
         <div>
           <div className="flex items-center gap-2 mb-4">
-            <img src="/logo.png" alt="The Chess Classes" className="h-10" />
-            <span className="text-xl font-bold text-white">The Chess Classes</span>
+          <img src="/assets/images/logo-white.png" alt="logo" className='w-40' />
+          {/* <span className="text-xl font-bold text-white">The Chess Classes</span> */}
           </div>
           <p className="text-sm">
             Unlock your true potential in chess with expert guidance and live training sessions.
           </p>
           <div className="flex gap-3 mt-4">
-            <a href="#"><img src="/icons/facebook.svg" alt="Facebook" className="h-5" /></a>
-            <a href="#"><img src="/icons/instagram.svg" alt="Instagram" className="h-5" /></a>
-            <a href="#"><img src="/icons/youtube.svg" alt="YouTube" className="h-5" /></a>
+            {/* <a href="#"><img src="/icons/facebook.svg" alt="Facebook" className="h-5" /></a> */}
+            {/* <a href="#"><img src="/icons/instagram.svg" alt="Instagram" className="h-5" /></a> */}
+            {/* <a href="#"><img src="/icons/youtube.svg" alt="YouTube" className="h-5" /></a> */}
           </div>
         </div>
 

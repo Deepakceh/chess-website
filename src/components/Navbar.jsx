@@ -22,10 +22,13 @@ export default function Navbar() {
         className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white shadow-md text-black' : 'bg-transparent text-white'
           }`}
       >
-        <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="text-2xl font-bold">
-            The Chess Classes
+            {scrolled ?
+              <img src="/assets/images/logo-black.png" alt="logo" className='w-40 h-10' /> :
+              <img src="/assets/images/logo-white.png" alt="logo" className='w-40 h-10' />
+            }
           </Link>
 
           {/* Desktop Menu */}
@@ -39,8 +42,8 @@ export default function Navbar() {
           <Link
             href="/book-demo"
             className={`px-4 py-2 rounded-full text-sm font-semibold transition-colors duration-300 ${scrolled
-                ? 'bg-black text-white hover:bg-gray-800'
-                : 'bg-white text-black hover:bg-gray-200'
+              ? 'bg-black text-white hover:bg-gray-800'
+              : 'bg-white text-black hover:bg-gray-200'
               }`}
           >
             Book Demo
