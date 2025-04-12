@@ -8,9 +8,8 @@ export default function AboutSection() {
       {/* Left Side */}
       <motion.div
         initial={{ opacity: 0, x: -40 }}
-        whileInView={{ opacity: 1, x: 0 }}
+        animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6 }}
-        viewport={{ once: true, amount: 0.2 }}
         className="flex-1 space-y-6"
       >
         <span className="text-sm font-semibold text-yellow-500 uppercase tracking-wide">Who We Are</span>
@@ -26,9 +25,8 @@ export default function AboutSection() {
           {/* Feature 1 */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            viewport={{ once: true, amount: 0.2 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.5 }}
             className="flex items-start gap-4"
           >
             <div className="text-white bg-gradient-to-tr from-black to-gray-800 p-3 rounded-full shadow-md">
@@ -43,9 +41,8 @@ export default function AboutSection() {
           {/* Feature 2 */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
-            viewport={{ once: true, amount: 0.2 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.5 }}
             className="flex items-start gap-4"
           >
             <div className="text-white bg-gradient-to-tr from-black to-gray-800 p-3 rounded-full shadow-md">
@@ -62,15 +59,14 @@ export default function AboutSection() {
       {/* Right Side: Image */}
       <motion.div
         initial={{ opacity: 0, x: 40 }}
-        whileInView={{ opacity: 1, x: 0 }}
+        animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6 }}
-        viewport={{ once: true, amount: 0.2 }}
         className="flex-1 relative rounded-2xl overflow-hidden shadow-xl"
       >
         <img
           src="/assets/images/about.png"
           alt="Chess Board"
-          className="object-cover"
+          className="object-cover w-full h-full"
         />
       </motion.div>
     </section>

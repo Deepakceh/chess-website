@@ -68,9 +68,9 @@ export default function Navbar() {
             </button>
             <div className="flex flex-col gap-6 text-black font-medium">
               <Link href="/" onClick={() => setMenuOpen(false)}>Home</Link>
-              <Link href="#about" onClick={() => setMenuOpen(false)}>About</Link>
-              <Link href="#services" onClick={() => setMenuOpen(false)}>Services</Link>
-              <Link href="#contact" onClick={() => setMenuOpen(false)}>Contact</Link>
+              <Link href="/about" onClick={() => setMenuOpen(false)}>About</Link>
+              <Link href="/services" onClick={() => setMenuOpen(false)}>Services</Link>
+              <Link href="/contact" onClick={() => setMenuOpen(false)}>Contact</Link>
             </div>
           </div>
         </div>
