@@ -50,14 +50,14 @@ export default function Navbar() {
 
           {/* Join Button */}
           <Link
-            href="/book-demo"
+            href="/contact"
             className={`px-4 py-2 rounded-full text-sm font-semibold transition-colors duration-300 ${
               scrolled
                 ? 'bg-black text-white hover:bg-yellow-600 hover:text-black'
                 : 'bg-white text-black hover:bg-yellow-600 hover:text-black'
             }`}
           >
-            Book Demo
+            Join
           </Link>
 
           {/* Mobile Menu Icon */}
