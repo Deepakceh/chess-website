@@ -11,7 +11,7 @@ export default function page() {
     <>
       <BannerSection />
       <StatsSection />
-      <AboutSection />
+      <AboutSection animateOnScroll={true} />
       <WhyChooseSection />
       <ServiceSection />
       <CurriculumSection />

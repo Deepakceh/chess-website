@@ -1,16 +1,32 @@
 'use client';
 import { motion } from 'framer-motion';
 
-export default function AboutSection() {
+export default function AboutSection({ animateOnScroll = true }) {
+  // Common motion props function
+  const getMotionProps = (dir = 'left', delay = 0) => {
+    const axis = dir === 'left' ? -30 : dir === 'right' ? 30 : 0;
+    const base = {
+      initial: { opacity: 0, x: axis },
+      transition: { duration: 0.6, delay },
+    };
+
+    return animateOnScroll
+      ? {
+        ...base,
+        whileInView: { opacity: 1, x: 0 },
+        viewport: { once: true, amount: 0.2 },
+      }
+      : {
+        ...base,
+        animate: { opacity: 1, x: 0 },
+      };
+  };
+
   return (
     <section className="relative bg-gradient-to-br from-white to-gray-100 px-6 py-16 md:px-24 flex flex-col md:flex-row gap-14">
-
       {/* Left Side */}
       <motion.div
-        initial={{ opacity: 0, x: -40 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true, amount: 0.2 }}
+        {...getMotionProps('left')}
         className="flex-1 space-y-6"
       >
         <span className="text-sm font-semibold text-yellow-500 uppercase tracking-wide">Who We Are</span>
@@ -25,10 +41,7 @@ export default function AboutSection() {
         <div className="space-y-6">
           {/* Feature 1 */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            viewport={{ once: true, amount: 0.2 }}
+            {...getMotionProps('bottom', 0.2)}
             className="flex items-start gap-4"
           >
             <div className="text-white bg-gradient-to-tr from-black to-gray-800 p-3 rounded-full shadow-md">
@@ -42,10 +55,7 @@ export default function AboutSection() {
 
           {/* Feature 2 */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
-            viewport={{ once: true, amount: 0.2 }}
+            {...getMotionProps('bottom', 0.4)}
             className="flex items-start gap-4"
           >
             <div className="text-white bg-gradient-to-tr from-black to-gray-800 p-3 rounded-full shadow-md">
@@ -61,10 +71,7 @@ export default function AboutSection() {
 
       {/* Right Side: Image */}
       <motion.div
-        initial={{ opacity: 0, x: 40 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true, amount: 0.2 }}
+        {...getMotionProps('right')}
         className="flex-1 relative rounded-2xl overflow-hidden shadow-xl"
       >
         <img
