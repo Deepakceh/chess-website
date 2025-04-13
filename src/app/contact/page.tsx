@@ -1,9 +1,9 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import HeroSection from '../../components/HeroSection'
+import HeroSection from '../../components/HeroSection';
 
-export default function ContactUsSection() {
+export default function page() {
   return (
     <>
       <HeroSection
@@ -13,75 +13,51 @@ export default function ContactUsSection() {
 
       <motion.section
         initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: 'easeOut' }}
         className="min-h-screen flex items-center justify-center px-4 py-20 bg-gradient-to-br from-yellow-50 to-white"
       >
         <div className="w-full max-w-6xl mx-auto grid md:grid-cols-2 gap-12 bg-white/60 backdrop-blur-lg rounded-3xl shadow-2xl border border-yellow-100 p-10 md:p-16">
 
           {/* Left: Info */}
-          <div className="space-y-8">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
-            >
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            className="space-y-8"
+          >
+            <div>
               <h2 className="text-4xl font-bold text-gray-800 mb-2">Let’s Connect</h2>
               <p className="text-gray-600 text-base">
                 Reach out to start your chess journey with personalized coaching and modern training techniques.
               </p>
-            </motion.div>
-
-            {/* Highlights / Achievements */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm text-gray-700">
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.2 }}
-                className="bg-white/70 backdrop-blur border border-yellow-100 rounded-xl p-4 shadow-sm"
-              >
-                <h4 className="text-lg font-semibold text-yellow-500 mb-1">500+ Hours Taught</h4>
-                <p>Experience that ensures results for all levels — beginners to advanced.</p>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.3 }}
-                className="bg-white/70 backdrop-blur border border-yellow-100 rounded-xl p-4 shadow-sm"
-              >
-                <h4 className="text-lg font-semibold text-yellow-500 mb-1">Students from 10+ Cities</h4>
-                <p>Trusted by parents and students across India & beyond.</p>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.4 }}
-                className="bg-white/70 backdrop-blur border border-yellow-100 rounded-xl p-4 shadow-sm"
-              >
-                <h4 className="text-lg font-semibold text-yellow-500 mb-1">Interactive Online Classes</h4>
-                <p>Live sessions with real-time analysis, puzzles & fun challenges.</p>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.5 }}
-                className="bg-white/70 backdrop-blur border border-yellow-100 rounded-xl p-4 shadow-sm"
-              >
-                <h4 className="text-lg font-semibold text-yellow-500 mb-1">Beginner Friendly</h4>
-                <p>Even if you don’t know the rules, we’ll teach you step-by-step.</p>
-              </motion.div>
             </div>
-          </div>
 
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm text-gray-700">
+              {[
+                { title: "500+ Hours Taught", desc: "Experience that ensures results for all levels — beginners to advanced.", delay: 0.2 },
+                { title: "Students from 10+ Cities", desc: "Trusted by parents and students across India & beyond.", delay: 0.3 },
+                { title: "Interactive Online Classes", desc: "Live sessions with real-time analysis, puzzles & fun challenges.", delay: 0.4 },
+                { title: "Beginner Friendly", desc: "Even if you don’t know the rules, we’ll teach you step-by-step.", delay: 0.5 }
+              ].map((item, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: -30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: item.delay, duration: 0.5 }}
+                  className="bg-white/70 backdrop-blur border border-yellow-100 rounded-xl p-4 shadow-sm"
+                >
+                  <h4 className="text-lg font-semibold text-yellow-500 mb-1">{item.title}</h4>
+                  <p>{item.desc}</p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
 
           {/* Right: Form */}
           <motion.form
             initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
             className="space-y-6"
           >

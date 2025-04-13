@@ -1,4 +1,3 @@
-import React from 'react'
 import AboutSection from '../../components/AboutSection'
 import HeroSection from '../../components/HeroSection'
 export default function page() {
@@ -8,7 +7,7 @@ export default function page() {
         title="About Us"
         currentPage="about"
       />
-      <AboutSection />
+      <AboutSection animateOnScroll={false} />
     </>
   )
 }
