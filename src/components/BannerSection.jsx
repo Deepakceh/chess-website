@@ -26,14 +26,14 @@ export default function BannerSection() {
     {
       src: '/assets/images/banners/banner3.avif',
       title: 'What We Offer',
-      description: 'From beginner bootcamps to advanced coaching, explore our chess training programs crafted for all levels.',
+      description: 'From foundational lessons to advanced coaching, explore our chess training programs crafted for all skill levels.'
     },
     {
       src: '/assets/images/banners/banner4',
       title: 'Learn Through a Powerful Curriculum',
       description: 'Our structured curriculum blends theory, practice, and play — designed to bring out the best in every player.',
       buttonText: 'Request a Demo',
-      buttonLink: '/demo',
+      buttonLink: '/contact',
     },
     {
       src: '/assets/images/banners/banner5',
@@ -71,7 +71,7 @@ export default function BannerSection() {
                 <p className="text-white text-base md:text-lg mb-6">{banner.description}</p>
                 {banner.buttonText && banner.buttonLink && (
                   <Link href={banner.buttonLink}>
-                    <button className="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold py-2 px-6 rounded-full transition duration-300">
+                    <button className="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold py-2 px-6 rounded-full transition duration-300 cursor-pointer">
                       {banner.buttonText}
                     </button>
                   </Link>

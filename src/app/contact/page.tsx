@@ -61,30 +61,56 @@ export default function page() {
             transition={{ duration: 0.5 }}
             className="space-y-6"
           >
-            <div>
-              <label className="block text-sm font-medium text-gray-700">Full Name</label>
-              <input
-                type="text"
-                placeholder="Your Name"
-                className="w-full mt-1 p-4 rounded-xl border border-gray-300 bg-white/80 backdrop-blur focus:outline-none focus:ring-2 focus:ring-yellow-400 shadow-sm"
-              />
+            {/* Name & Mobile */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label className="block text-sm font-medium text-gray-700">Full Name<span className='text-red-500'>*</span></label>
+                <input
+                  type="text"
+                  name="user_name"
+                  required
+                  pattern="[A-Za-z\s]+"
+                  placeholder="Your Name"
+                  className="w-full mt-1 p-4 rounded-xl border border-gray-300 bg-white/80 backdrop-blur focus:outline-none focus:ring-2 focus:ring-yellow-400 shadow-sm"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700">Mobile Number<span className='text-red-500'>*</span></label>
+                <input
+                  type="text"
+                  name="user_mobile"
+                  required
+                  pattern="\d{10}"
+                  maxLength={10}
+                  placeholder="10-digit Mobile"
+                  className="w-full mt-1 p-4 rounded-xl border border-gray-300 bg-white/80 backdrop-blur focus:outline-none focus:ring-2 focus:ring-yellow-400 shadow-sm"
+                />
+              </div>
             </div>
+
+            {/* Email */}
             <div>
-              <label className="block text-sm font-medium text-gray-700">Email</label>
+              <label className="block text-sm font-medium text-gray-700">Email<span className='text-red-500'>*</span></label>
               <input
                 type="email"
+                name="user_email"
+                required
                 placeholder="you@example.com"
                 className="w-full mt-1 p-4 rounded-xl border border-gray-300 bg-white/80 backdrop-blur focus:outline-none focus:ring-2 focus:ring-yellow-400 shadow-sm"
               />
             </div>
+
+            {/* Message */}
             <div>
               <label className="block text-sm font-medium text-gray-700">Message</label>
               <textarea
+                name="message"
                 rows={4}
                 placeholder="Your message here..."
                 className="w-full mt-1 p-4 rounded-xl border border-gray-300 bg-white/80 backdrop-blur focus:outline-none focus:ring-2 focus:ring-yellow-400 shadow-sm"
               />
             </div>
+
             <button
               type="submit"
               className="bg-yellow-400 hover:bg-yellow-500 text-white font-semibold py-3 px-6 rounded-xl shadow-lg transition-all duration-300"
@@ -94,6 +120,7 @@ export default function page() {
           </motion.form>
         </div>
       </motion.section>
+
     </>
   );
 }
