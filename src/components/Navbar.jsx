@@ -4,11 +4,13 @@ import { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { Menu } from 'lucide-react';
 import Link from 'next/link';
+import Login from "../components/Login"
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname(); // 👈 Get current path
+  const [openLogin, setOpenLogin] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,9 +28,8 @@ export default function Navbar() {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-          scrolled ? 'bg-white shadow-md text-black' : 'bg-transparent text-white'
-        }`}
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white shadow-md text-black' : 'bg-transparent text-white'
+          }`}
       >
         <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
           {/* Logo */}
@@ -50,15 +51,17 @@ export default function Navbar() {
 
           {/* Join Button */}
           <Link
-            href="/contact"
-            className={`px-4 py-2 rounded-full text-sm font-semibold transition-colors duration-300 ${
-              scrolled
+            href="#"
+            onClick={() => setOpenLogin(true)}
+            className={`px-4 py-2 rounded-full text-sm font-semibold transition-colors duration-300 ${scrolled
                 ? 'bg-black text-white hover:bg-yellow-600 hover:text-black'
                 : 'bg-white text-black hover:bg-yellow-600 hover:text-black'
-            }`}
+              }`}
           >
-            Join
+            Login
           </Link>
+
+          <Login open={openLogin} setOpen={setOpenLogin} />
 
           {/* Mobile Menu Icon */}
           <button onClick={() => setMenuOpen(true)} className="md:hidden">
