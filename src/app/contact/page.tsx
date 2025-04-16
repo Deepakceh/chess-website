@@ -2,14 +2,40 @@
 
 import { motion } from 'framer-motion';
 import HeroSection from '../../components/HeroSection';
+import { Formik, Form, Field, ErrorMessage, FormikHelpers } from "formik";
+import * as Yup from "yup";
+import { toast } from "sonner";
 
 export default function page() {
+  const initialValues = {
+    name: '',
+    mobile: '',
+    email: '',
+    message: ''
+  };
+
+  const validationSchema = Yup.object({
+    name: Yup.string()
+      .matches(/^[A-Za-z\s]+$/, "Name must contain only letters and spaces")
+      .required("Name is required"),
+    mobile: Yup.string()
+      .matches(/^\d{10}$/, "Mobile number must be 10 digits")
+      .required("Mobile is required"),
+    email: Yup.string()
+      .email("Invalid email format")
+      .required("Email is required"),
+    message: Yup.string(),
+  });
+
+  const handleSubmit = (values: typeof initialValues, { resetForm }: FormikHelpers<typeof initialValues>) => {
+    toast.success("Thanks for reaching out! We'll get back to you shortly.");
+    console.log(values);
+    resetForm();
+  };
+
   return (
     <>
-      <HeroSection
-        title="Contact Us"
-        currentPage="contact"
-      />
+      <HeroSection title="Contact Us" currentPage="contact" />
 
       <motion.section
         initial={{ opacity: 0, y: 40 }}
@@ -54,73 +80,90 @@ export default function page() {
             </div>
           </motion.div>
 
-          {/* Right: Form */}
-          <motion.form
+          {/* Right: Formik Form */}
+          <motion.div
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
             className="space-y-6"
           >
-            {/* Name & Mobile */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div>
-                <label className="block text-sm font-medium text-gray-700">Full Name<span className='text-red-500'>*</span></label>
-                <input
-                  type="text"
-                  name="user_name"
-                  required
-                  pattern="[A-Za-z\s]+"
-                  placeholder="Your Name"
-                  className="w-full mt-1 p-4 rounded-xl border border-gray-300 bg-white/80 backdrop-blur focus:outline-none focus:ring-2 focus:ring-yellow-400 shadow-sm"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700">Mobile Number<span className='text-red-500'>*</span></label>
-                <input
-                  type="text"
-                  name="user_mobile"
-                  required
-                  pattern="\d{10}"
-                  maxLength={10}
-                  placeholder="10-digit Mobile"
-                  className="w-full mt-1 p-4 rounded-xl border border-gray-300 bg-white/80 backdrop-blur focus:outline-none focus:ring-2 focus:ring-yellow-400 shadow-sm"
-                />
-              </div>
-            </div>
-
-            {/* Email */}
-            <div>
-              <label className="block text-sm font-medium text-gray-700">Email<span className='text-red-500'>*</span></label>
-              <input
-                type="email"
-                name="user_email"
-                required
-                placeholder="you@example.com"
-                className="w-full mt-1 p-4 rounded-xl border border-gray-300 bg-white/80 backdrop-blur focus:outline-none focus:ring-2 focus:ring-yellow-400 shadow-sm"
-              />
-            </div>
-
-            {/* Message */}
-            <div>
-              <label className="block text-sm font-medium text-gray-700">Message</label>
-              <textarea
-                name="message"
-                rows={4}
-                placeholder="Your message here..."
-                className="w-full mt-1 p-4 rounded-xl border border-gray-300 bg-white/80 backdrop-blur focus:outline-none focus:ring-2 focus:ring-yellow-400 shadow-sm"
-              />
-            </div>
-
-            <button
-              type="submit"
-              className="bg-yellow-400 hover:bg-yellow-500 text-white font-semibold py-3 px-6 rounded-xl shadow-lg transition-all duration-300"
+            <Formik
+              initialValues={initialValues}
+              validationSchema={validationSchema}
+              onSubmit={handleSubmit}
             >
-              Send Message
-            </button>
-          </motion.form>
+              {({ errors, touched }) => (
+                <Form className="space-y-6">
+                  {/* Name & Mobile */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700">
+                        Full Name<span className="text-red-500">*</span>
+                      </label>
+                      <Field
+                        name="name"
+                        type="text"
+                        placeholder="Your Name"
+                        className={`w-full mt-1 p-4 rounded-xl bg-white/80 backdrop-blur border ${errors.name && touched.name ? 'border-red-500' : 'border-gray-300'
+                          } focus:outline-none focus:ring-2 focus:ring-yellow-400 shadow-sm`}
+                      />
+                      <ErrorMessage name="name" component="div" className="text-red-500 text-sm mt-1" />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700">
+                        Mobile Number<span className="text-red-500">*</span>
+                      </label>
+                      <Field
+                        name="mobile"
+                        type="text"
+                        maxLength={10}
+                        placeholder="10-digit Mobile"
+                        className={`w-full mt-1 p-4 rounded-xl bg-white/80 backdrop-blur border ${errors.mobile && touched.mobile ? 'border-red-500' : 'border-gray-300'
+                          } focus:outline-none focus:ring-2 focus:ring-yellow-400 shadow-sm`}
+                      />
+                      <ErrorMessage name="mobile" component="div" className="text-red-500 text-sm mt-1" />
+                    </div>
+                  </div>
+
+                  {/* Email */}
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700">
+                      Email<span className="text-red-500">*</span>
+                    </label>
+                    <Field
+                      name="email"
+                      type="email"
+                      placeholder="you@example.com"
+                      className={`w-full mt-1 p-4 rounded-xl bg-white/80 backdrop-blur border ${errors.email && touched.email ? 'border-red-500' : 'border-gray-300'
+                        } focus:outline-none focus:ring-2 focus:ring-yellow-400 shadow-sm`}
+                    />
+                    <ErrorMessage name="email" component="div" className="text-red-500 text-sm mt-1" />
+                  </div>
+
+                  {/* Message */}
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700">Message</label>
+                    <Field
+                      as="textarea"
+                      name="message"
+                      rows={4}
+                      placeholder="Your message here..."
+                      className="w-full mt-1 p-4 rounded-xl bg-white/80 backdrop-blur border border-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-400 shadow-sm"
+                    />
+                  </div>
+
+                  <button
+                    type="submit"
+                    className="bg-yellow-400 hover:bg-yellow-500 text-white font-semibold py-3 px-6 rounded-xl shadow-lg transition-all duration-300"
+                  >
+                    Send Message
+                  </button>
+                </Form>
+              )}
+            </Formik>
+          </motion.div>
         </div>
       </motion.section>
-
     </>
   );
 }

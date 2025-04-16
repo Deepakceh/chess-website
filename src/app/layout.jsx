@@ -3,6 +3,7 @@ import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import Head from 'next/head';
 import { Poppins } from 'next/font/google';
+import { Toaster } from "@/components/ui/sonner";
 import WhatsAppButton from '../components/WhatsAppButton'
 const poppins = Poppins({
   subsets: ['latin'],
@@ -52,6 +53,7 @@ export default function RootLayout({ children }) {
         <main>{children}</main>
         <WhatsAppButton />
         <Footer />
+        <Toaster position="top-center" richColors />
       </body>
     </html>
   );
