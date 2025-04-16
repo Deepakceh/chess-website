@@ -62,9 +62,9 @@ export default function Footer() {
           <ul className="space-y-2 text-sm">
             <li><a href="/" className="hover:text-yellow-500">Home</a></li>
             <li><a href="/about" className="hover:text-yellow-500">About Us</a></li>
+            <li><a href="/#courses" className="hover:text-yellow-500">Courses</a></li>
             <li><a href="/services" className="hover:text-yellow-500">Services</a></li>
             <li><a href="/contact" className="hover:text-yellow-500">Contact</a></li>
-            <li><a href="/gallery" className="hover:text-yellow-500">Gallery</a></li>
           </ul>
         </div>
 
@@ -72,8 +72,8 @@ export default function Footer() {
         <div>
           <h3 className="text-white font-semibold mb-3">Useful Links</h3>
           <ul className="space-y-2 text-sm">
-            <li><a href="/privacy" className="hover:text-yellow-500">Privacy Policy</a></li>
-            <li><a href="/terms" className="hover:text-yellow-500">Terms & Conditions</a></li>
+            <li><a href="/privacyPolicy" className="hover:text-yellow-500">Privacy Policy</a></li>
+            <li><a href="/termsConditions" className="hover:text-yellow-500">Terms & Conditions</a></li>
             <li><a href="/support" className="hover:text-yellow-500">Support</a></li>
             <li><a href="/faq" className="hover:text-yellow-500">FAQ</a></li>
           </ul>

@@ -1,5 +1,6 @@
 import AboutSection from '../../components/AboutSection'
-import CurriculumSection from '../../components/CurriculumSection'
+import CourseSection from '../../components/CourseSection'
+// import CurriculumSection from '../../components/CurriculumSection'
 import EnrollmentSection from '../../components/EnrollmentSection'
 import HeroSection from '../../components/HeroSection'
 export default function page() {
@@ -10,7 +11,8 @@ export default function page() {
         currentPage="about"
       />
       <AboutSection animateOnScroll={false} />
-      <CurriculumSection />
+      <CourseSection />
+      {/* <CurriculumSection /> */}
       <EnrollmentSection />
     </>
   )
