@@ -29,7 +29,7 @@ export default function page() {
 
   const handleSubmit = (values: typeof initialValues, { resetForm }: FormikHelpers<typeof initialValues>) => {
     toast.success("Thanks for reaching out! We'll get back to you shortly.");
-    console.log(values);
+    // console.log(values);
     resetForm();
   };
 
