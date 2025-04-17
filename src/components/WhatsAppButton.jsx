@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { MessageCircleMore } from 'lucide-react';
 
 export default function WhatsAppButton() {
-  const whatsappNumber = '918859192935'; // Full number with country code
+  const whatsappNumber = '919999146263'; // Full number with country code
   const message = "Hi! I'm interested in joining chess classes."; // Predefined message
 
   // Ensure the message is properly encoded
