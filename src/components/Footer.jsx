@@ -35,7 +35,7 @@ export default function Footer() {
               <span className="text-sm">+91 9999146263</span>
             </a>
 
-            {/* Email */}
+            {/* Email
             <a
               href="mailto:thechessclasses@gmail.com"
               className="flex items-center gap-2 hover:text-yellow-500 transition-colors duration-200"
@@ -50,8 +50,8 @@ export default function Footer() {
                 <rect width="20" height="16" x="2" y="4" rx="2" />
                 <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
               </svg>
-              {/* <span className="text-sm">thechessclasses@gmail.com</span> */}
-            </a>
+              <span className="text-sm">thechessclasses@gmail.com</span>
+            </a> */}
           </div>
 
         </div>
