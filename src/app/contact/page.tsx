@@ -5,10 +5,8 @@ import HeroSection from '../../components/HeroSection';
 import { Formik, Form, Field, ErrorMessage, FormikHelpers } from "formik";
 import * as Yup from "yup";
 import { toast } from "sonner";
-import { useRouter } from 'next/navigation';
 
 export default function page() {
-  const router = useRouter();
 
   const initialValues = {
     name: '',
@@ -35,9 +33,6 @@ export default function page() {
     // console.log(values);
     // Redirect after short delay
     resetForm();
-    setTimeout(() => {
-      router.push('/');
-    }, 2000);
   };
 
   return (
