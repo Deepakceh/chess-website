@@ -39,7 +39,6 @@ export default function BannerSection() {
       src: '/assets/images/banners/banner5',
       title: 'The Power of Chess',
       description: 'Boost memory, improve logic, and develop strategic thinking with the ancient game loved worldwide.',
-      // No button here
     }
   ];
 
