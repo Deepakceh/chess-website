@@ -15,7 +15,7 @@ export default function Footer() {
           <div className="mt-3 space-y-2">
             {/* Phone */}
             <a
-              href="tel:+628123451234"
+              href="tel:9999146263"
               className="flex items-center gap-2 text-white hover:text-yellow-500 transition-colors duration-200"
             >
               <svg

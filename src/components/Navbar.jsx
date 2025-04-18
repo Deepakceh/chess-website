@@ -9,7 +9,8 @@ import Link from 'next/link';
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const pathname = usePathname(); 
+  const pathname = usePathname();
+
   // const [openLogin, setOpenLogin] = useState(false)
 
   useEffect(() => {
@@ -32,8 +33,14 @@ export default function Navbar() {
 
   const isActive = (path) => pathname === path;
 
-  const linkClass = (path) =>`hover:text-yellow-600 transition-colors duration-200 ${isActive(path) ? 'text-yellow-500 font-semibold' : ''}`;
+  const linkClass = (path) => `hover:text-yellow-600 transition-colors duration-200 ${isActive(path) ? 'text-yellow-500 font-semibold' : ''}`;
 
+
+  const whatsappNumber = '919999146263'; // Full number with country code
+  const message = "Hi! I'm interested in taking a demo chess class. Could you please share the details?";
+
+  // Ensure the message is properly encoded
+  const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
   return (
     <>
       <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white shadow-md text-black' : 'bg-transparent text-white'}`} >
@@ -54,6 +61,7 @@ export default function Navbar() {
             <Link href="/#courses" className={linkClass('/#courses')}> Courses</Link>
             <Link href="/services" className={linkClass('/services')}>Services</Link>
             <Link href="/contact" className={linkClass('/contact')}>Contact</Link>
+            <Link href={url} className={linkClass('#')}>Free Demo</Link>
           </div>
 
           {/* Join Button */}
@@ -90,6 +98,7 @@ export default function Navbar() {
               <Link href="/#courses" onClick={() => setMenuOpen(false)} className={linkClass('/#courses')}> Courses</Link>
               <Link href="/services" onClick={() => setMenuOpen(false)} className={linkClass('/services')}>Services</Link>
               <Link href="/contact" onClick={() => setMenuOpen(false)} className={linkClass('/contact')}>Contact</Link>
+              <Link href={url} onClick={() => setMenuOpen(false)} className={linkClass('#')}>Free Demo</Link>
             </div>
           </div>
         </div>

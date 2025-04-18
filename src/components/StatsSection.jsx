@@ -5,10 +5,10 @@ import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
 
 const stats = [
-  { label: "MEMBER ACTIVE", value: 41500, suffix: "+" },
-  { label: "EXPERT TEAM", value: 2000, suffix: "+" },
-  { label: "WINNING COMPETITION", value: 751, suffix: "+" },
-  { label: "YEARS OF EXPERIENCE", value: 25, suffix: "+" },
+  { label: "MEMBER ACTIVE", value: 350, suffix: "+" },
+  // { label: "EXPERT TEAM", value: 2000, suffix: "+" },
+  // { label: "WINNING COMPETITION", value: 751, suffix: "+" },
+  { label: "YEARS OF EXPERIENCE", value: 10, suffix: "+" },
 ];
 
 export default function StatsSection() {
@@ -25,7 +25,7 @@ export default function StatsSection() {
       transition={{ duration: 0.8, ease: "easeOut" }}
       className="relative z-10 -mt-24 bg-white shadow-xl py-8 px-2 sm:px-4 lg:px-8 border-t-4 border-yellow-500 max-w-7xl mx-14"
     >
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
+      <div className="grid grid-cols-2 sm:grid-cols-2 gap-6 text-center">
         {stats.map((stat, idx) => (
           <motion.div
             key={idx}

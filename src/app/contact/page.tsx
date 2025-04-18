@@ -5,8 +5,11 @@ import HeroSection from '../../components/HeroSection';
 import { Formik, Form, Field, ErrorMessage, FormikHelpers } from "formik";
 import * as Yup from "yup";
 import { toast } from "sonner";
+import { useRouter } from 'next/navigation';
 
 export default function page() {
+  const router = useRouter();
+
   const initialValues = {
     name: '',
     mobile: '',
@@ -30,7 +33,11 @@ export default function page() {
   const handleSubmit = (values: typeof initialValues, { resetForm }: FormikHelpers<typeof initialValues>) => {
     toast.success("Thanks for reaching out! We'll get back to you shortly.");
     // console.log(values);
+    // Redirect after short delay
     resetForm();
+    setTimeout(() => {
+      router.push('/');
+    }, 2000);
   };
 
   return (
