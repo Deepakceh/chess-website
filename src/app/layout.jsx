@@ -1,7 +1,6 @@
 import "./globals.css";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
-import Head from 'next/head';
 import { Poppins } from 'next/font/google';
 import { Toaster } from "@/components/ui/sonner";
 import WhatsAppButton from '../components/WhatsAppButton'
@@ -47,24 +46,6 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={poppins.className}>
-      <Head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              "name": "The Chess Classes",
-              "url": "https://thechessclasses.com",
-              "aggregateRating": {
-                "@type": "AggregateRating",
-                "ratingValue": "4.9",
-                "reviewCount": "87"
-              }
-            }),
-          }}
-        />
-      </Head>
       <body className="bg-white text-black antialiased">
         <Navbar />
         <main>{children}</main>
