@@ -14,8 +14,7 @@ const poppins = Poppins({
 
 export const metadata = {
   title: "The Chess Classes",
-  description:
-    "Join our online chess coaching platform and master the game with expert trainers. Perfect for beginners to advanced players.",
+  description: "Join our online chess coaching platform and master the game with expert trainers. Perfect for beginners to advanced players.",
   keywords: [
     "online chess coaching",
     "learn chess online",
@@ -31,8 +30,7 @@ export const metadata = {
   metadataBase: new URL("https://thechessclasses.com"),
   openGraph: {
     title: "Online Chess Coaching | Learn Chess with Experts",
-    description:
-      "Master the game of chess with online coaching from experienced trainers. Start learning today!",
+    description: "Master the game of chess with online coaching from experienced trainers. Start learning today!",
     url: "https://thechessclasses.com",
     siteName: "Chess Coaching",
     locale: "en_US",
@@ -47,7 +45,24 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={poppins.className}>
-      <Head />
+      <Head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "The Chess Classes",
+              "url": "https://thechessclasses.com",
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.9",
+                "reviewCount": "87"
+              }
+            }),
+          }}
+        />
+      </Head>
       <body className="bg-white text-black antialiased">
         <Navbar />
         <main>{children}</main>
