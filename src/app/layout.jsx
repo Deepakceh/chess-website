@@ -24,6 +24,8 @@ export const metadata = {
     "chess practice",
     "chess tutorial",
     "chess strategy",
+    "online chess",
+    "online chess in delhi",
   ],
   authors: [{ name: "Chess Trainer" }],
   creator: "Chess Trainer",
